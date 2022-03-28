@@ -73,7 +73,6 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 		{
 			upgrades = {
 				"sentry_gun_armor_multiplier",
-				"sentry_gun_silent"
 			},
 			cost = self.costs.hightier
 		},
@@ -93,12 +92,14 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 	self.skills.engineering = {
 		{
 			upgrades = {
-				
+				"sentry_gun_silent",
+				"player_sentry_master_speed_multiplier",
 			},
 			cost = self.costs.hightier
 		},
 		{
 			upgrades = {
+				"player_sentry_master_health_multiplier",
 				"sentry_gun_ap_bullets",
 				"sentry_gun_fire_rate_reduction_1"
 			},
@@ -115,21 +116,21 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 	self.skills.tower_defense = {
 		{
 			upgrades = {
-				"sentry_gun_quantity_1"
+				"player_sentry_health_regen_addend_1"
 			},
 			cost = self.costs.hightier
 		},
 		{
 			upgrades = {
-				"sentry_gun_quantity_2"
+				"player_sentry_health_regen_addend_2"
 			},
 			cost = self.costs.hightierpro
 		},
 		name_id = "menu_tower_defense_beta",
 		desc_id = "menu_tower_defense_beta_desc",
 		icon_xy = {
-			7,
-			5
+			6,
+			6
 		}
 	}
 end)

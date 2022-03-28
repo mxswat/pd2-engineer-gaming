@@ -13,11 +13,11 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	-- If has Partner in crime active then do not trigger the effect
 	if not (self:num_local_minions() > 0 and self:has_category_upgrade("player", "minion_master_speed_multiplier")) then
-		if self:get_owned_sentries_count() > 0 then	
-			multiplier = multiplier + 0.10
+		if self:has_category_upgrade("player", "sentry_master_speed_multiplier") and self:get_owned_sentries_count() > 0 then	
+			multiplier = multiplier + self:upgrade_value("player", "sentry_master_speed_multiplier", 0)
 		end
 	end
-
+	
 	log_msg_cached("movement_speed_multiplier", multiplier)
 	return multiplier
 end
@@ -26,15 +26,32 @@ local old_PlayerManager_health_skill_multiplier = PlayerManager.health_skill_mul
 function PlayerManager:health_skill_multiplier()
 	local multiplier = old_PlayerManager_health_skill_multiplier(self)
 	
+	-- If has Partner in crime active then do not trigger the effect
 	if not (self:num_local_minions() > 0 and self:has_category_upgrade("player", "minion_master_health_multiplier")) then
-		if self:get_owned_sentries_count() > 0 then	
-			multiplier = multiplier + 0.30
+		if self:has_category_upgrade("player", "sentry_master_health_multiplier") and self:get_owned_sentries_count() > 0 then	
+			multiplier = multiplier + self:upgrade_value("player", "sentry_master_health_multiplier", 0)
 		end
 	end
 
 	log_msg_cached("health_skill_multiplier", multiplier)
 	return multiplier
 end
+
+
+local old_PlayerManager_health_regen = PlayerManager.health_regen
+function PlayerManager:health_regen()
+	local health_regen = old_PlayerManager_health_regen(self)
+
+	if not (self:num_local_minions() > 0 and self:has_category_upgrade("player", "hostage_health_regen_addend")) then
+		if self:has_category_upgrade("player", "sentry_health_regen_addend") and self:get_owned_sentries_count() > 0 then	
+			health_regen = health_regen + self:upgrade_value("player", "sentry_health_regen_addend", 0)
+		end
+	end
+
+	log_msg_cached("health_regen", health_regen)
+	return health_regen
+end
+
 
 function PlayerManager:get_owned_sentries_count()
 	if not self:player_unit() or not self:player_unit():position() then

@@ -98,5 +98,5 @@ Hooks:PostHook(UpgradesTweakData, "init", "EngineerGaming_UpgradesTweakData_init
 		true
 	}
 
-	self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
+	-- self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
 end)

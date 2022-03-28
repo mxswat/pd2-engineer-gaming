@@ -2,7 +2,7 @@ local function generateSkillLocaleString(basic, ace)
 	return "BASIC: ##$basic##\n"..basic..".\n\nACE: ##$pro##\n"..ace.."."
 end
 
-Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInitWeaponNames", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "EngineerGaming_LocalizationManagerPostInit", function(loc)
 	local names = {}
 
 	names['menu_defense_up_beta_desc'] = generateSkillLocaleString("Your sentry guns gain a protective shield.\n\nThe cost of deploying a sentry gun is reduced by ##10%##", "You can now pick up broken sentries, broken sentries will lose ##50%## of their current ammo")

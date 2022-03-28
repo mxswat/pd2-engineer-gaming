@@ -71,4 +71,32 @@ Hooks:PostHook(UpgradesTweakData, "init", "EngineerGaming_UpgradesTweakData_init
 		0.015,
 		0.045
 	}
+
+	self.definitions.player_broken_sentry_pickup = {
+		name_id = "menu_player_broken_sentry_pickup",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "broken_sentry_pickup",
+			category = "player"
+		}
+	}
+	self.values.player.broken_sentry_pickup = {
+		0.5
+	}
+
+	self.definitions.player_sentry_mark_hit_specials = {
+		name_id = "menu_player_sentry_mark_hit_specials",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "sentry_mark_hit_specials",
+			category = "player"
+		}
+	}
+	self.values.player.sentry_mark_hit_specials = {
+		true
+	}
+
+	self.values.player.body_armor.dodge[1] = 1 -- Debug always dodgde
 end)

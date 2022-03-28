@@ -1,23 +1,9 @@
 Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_init", function(self)
-    -- The cost for a good setup with sentries and tier 4 aced should be 30
-
-    -- {
-    --     "defense_up"
-    -- },
-    -- {
-    --     "sentry_targeting_package",
-    --     "eco_sentry"
-    -- },
-    -- {
-    --     "engineering",
-    --     "jack_of_all_trades"
-    -- },
-    -- {
-    --     "tower_defense"
-    -- }
+    -- The cost for a full setup with sentries and tier 4 aced will be 30,same as meta jokers cost w/ tier 4 aced
 
 	-- Tier 1
-	-- Basic Gain Shield and cost reduction
+	-- Basic Gain Shield and both cost reduction
+	-- Aced Gain pick up broken sentry
 	self.skills.defense_up = {
 		{
 			upgrades = {
@@ -29,7 +15,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 		},
 		{
 			upgrades = {
-				-- Gain pick up sentry
+				"player_broken_sentry_pickup"
 			},
 			cost = self.costs.hightierpro
 		},
@@ -69,6 +55,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 
 	-- Tier 2 Left
 	-- Replaced basic cost reduction with the aced version (+150% health)
+	-- Added mark hit special for +10% damage
 	self.skills.eco_sentry = {
 		{
 			upgrades = {
@@ -78,7 +65,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 		},
 		{
 			upgrades = {
-				
+				"player_sentry_mark_hit_specials"
 			},
 			cost = self.costs.hightierpro
 		},
@@ -89,6 +76,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 			2
 		}
 	}
+
+	-- Tier 2 Right
+	-- Added partner in crimes basic and aced but with sentries
 	self.skills.engineering = {
 		{
 			upgrades = {
@@ -113,6 +103,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "EngineerGaming_SkillTreeTweakData_in
 		}
 	}
 
+	-- Replaced with hostage taker sentry version
 	self.skills.tower_defense = {
 		{
 			upgrades = {

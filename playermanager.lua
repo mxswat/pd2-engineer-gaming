@@ -18,7 +18,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		end
 	end
 	
-	log_msg_cached("movement_speed_multiplier", multiplier)
+	-- log_msg_cached("movement_speed_multiplier", multiplier)
 	return multiplier
 end
 
@@ -33,7 +33,7 @@ function PlayerManager:health_skill_multiplier()
 		end
 	end
 
-	log_msg_cached("health_skill_multiplier", multiplier)
+	-- log_msg_cached("health_skill_multiplier", multiplier)
 	return multiplier
 end
 
@@ -48,7 +48,7 @@ function PlayerManager:health_regen()
 		end
 	end
 
-	log_msg_cached("health_regen", health_regen)
+	-- log_msg_cached("health_regen", health_regen)
 	return health_regen
 end
 

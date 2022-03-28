@@ -1,0 +1,26 @@
+{
+	"name": "Engineer Gaming",
+	"description": "Makes the full sentry build less expensive and cost as much as a full jokers setup",
+	"author": "Mx",
+	"contact": "No",
+	"color": "0.043 0.808 0.6",
+	"version": "1",
+	"hooks": [
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "mod.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "playermanager.lua"
+		},
+		{
+			"hook_id": "lib/tweak_data/skilltreetweakdata",
+			"script_path": "skilltreetweakdata.lua"
+		},
+		{
+			"hook_id": "lib/tweak_data/upgradestweakdata",
+			"script_path": "upgradestweakdata.lua"
+		}
+	]
+}
